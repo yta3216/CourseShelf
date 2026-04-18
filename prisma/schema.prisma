@@ -10,3 +10,37 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model Course {
+  id Int @id @default(autoincrement())
+  name String 
+  department Department
+  term String
+  materials Material[]
+  createdAt DateTime @default(now())
+}
+
+model Material {
+  id Int @id @default(autoincrement())
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  courseId Int
+  title String
+  type MaterialType
+  link String?
+  description String
+  createdAt DateTime @default(now())
+}
+
+enum Department {
+  COMPUTER_SCIENCE
+  MATHEMATICS
+  DATA_SCIENCE
+  GENERAL_SCIENCE
+}
+
+enum MaterialType {
+  LECTURE_NOTES
+  ASSIGNMENT
+  SYLLABUS
+  OTHER
+}
