@@ -8,17 +8,25 @@
     "start": "react-router-serve ./build/server/index.js"
   },
   "dependencies": {
+    "@prisma/client": "^6.19.3",
     "@react-router/node": "7.14.0",
     "@react-router/serve": "7.14.0",
     "isbot": "^5.1.36",
+    "prisma": "^6.19.3",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-router": "7.14.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.59.1",
     "@react-router/dev": "7.14.0",
     "@tailwindcss/vite": "^4.2.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@vitest/ui": "^3.2.4",
+    "jsdom": "^27.0.1",
     "tailwindcss": "^4.2.2",
-    "vite": "^8.0.3"
+    "vite": "^8.0.3",
+    "vitest": "^3.2.4"
   }
 }
