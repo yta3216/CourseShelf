@@ -13,7 +13,3 @@ body {
     color-scheme: dark;
   }
 }
-
-body {
-  @apply h-screen;
-}
