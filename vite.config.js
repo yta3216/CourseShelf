@@ -4,4 +4,7 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [reactRouter(), tailwindcss()],
+  test: {
+    exclude: ["app/tests/e2e/**", "node_modules/**"]
+  }
 });
