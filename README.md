@@ -26,7 +26,7 @@ ReactRouter's ```loader``` handles fetching data from the server on load, and ``
 
 ### Test Coverage
 
-Run ```npx playwright test``` for all E2E tests. Run ```npx vitest run``` for all unit/integration tests. Ensure that after any E2E tests are ran that the database is reset and re-seeded via ```npx prisma migrate reset```.
+Run ```npm run test``` to run all unit/integration/e2e tests sequentially. Ensure that after any E2E tests are ran that the database is reset and re-seeded via ```npx prisma migrate reset```.
 
 #### Description
 
