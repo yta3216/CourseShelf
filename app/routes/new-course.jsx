@@ -11,13 +11,11 @@ export async function action({ request }) {
     const department = formData.get("department");
     const term = formData.get("term").toUpperCase();
 
-    if (!courseName || !department || !term) {
-        return { message: "Please fill out all fields" };
+    const validateError = validateFormData({ courseName, department, term });
+    if (validateError) {
+        return validateError;
     }
 
-    if (!courseRegex.test(term)) {
-        return { message: "Term must be 4 numbers followed by W or S then 1 or 2" };
-    }
     let newCourse;
     try {
         newCourse = await prisma.course.create({
@@ -32,6 +30,16 @@ export async function action({ request }) {
     }
 
     return redirect(`/courses/${newCourse.id}`);
+}
+
+export function validateFormData({ courseName, department, term }) {
+    if (!courseName || !department || !term) {
+        return { message: "Please fill out all fields" };
+    }
+    if (!courseRegex.test(term)) {
+        return { message: "Term must be 4 numbers followed by W or S then 1 or 2" };
+    }
+    return null;
 }
 
 export default function NewCourse() {
