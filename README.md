@@ -21,8 +21,9 @@ ReactRouter's ```loader``` handles fetching data from the server on load, and ``
 4. Create an ```.env``` file in the root directory. Store ```DATABASE_URL="file:./dev.db"``` in it.
 5. Create the SQLite database with ```npx prisma migrate dev```.
 6. Seed the database with ```npx prisma db seed```.
-7. Start the development server with ```npm run dev```.
-8. Go to http://localhost:5173/ to view the website.
+7. For testing, install the Playwright browser with ```npx playwright install```.
+8. Start the development server with ```npm run dev```.
+9. Go to http://localhost:5173/ to view the website.
 
 ### Test Coverage
 
